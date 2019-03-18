@@ -1,10 +1,10 @@
 import React from 'react';
 
+import { connect } from 'react-redux'
 
 
 
-
-export default class HabitForm extends React.Component{
+class HabitForm extends React.Component{
   constructor(props){
     super(props)
 
@@ -21,8 +21,9 @@ export default class HabitForm extends React.Component{
 
 
   handleChange = (event) => {
+    let change = event.target.name
     this.setState({
-      title: event.target.value
+      change: event.target.value
     })
   }
 
@@ -30,6 +31,7 @@ export default class HabitForm extends React.Component{
 
   handleSubmit = (event) => {
     event.preventDefault()
+    this.props.addHabit(this.state)
   }
   render(){
     return(
@@ -56,3 +58,11 @@ export default class HabitForm extends React.Component{
 
 
   }
+
+  const mapDispatchToProps = dispatch =>{
+    return{
+      addHabit: formData => dispatch({type:"ADD_HABIT", payload: formData})
+    }
+  }
+
+  export default connect(null, mapDispatchToProps)(HabitForm)
