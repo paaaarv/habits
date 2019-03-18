@@ -21,9 +21,9 @@ class HabitForm extends React.Component{
 
 
   handleChange = (event) => {
-    let change = event.target.name
+
     this.setState({
-      change: event.target.value
+      [event.target.name]: event.target.value.toUpperCase()
     })
   }
 
@@ -31,6 +31,7 @@ class HabitForm extends React.Component{
 
   handleSubmit = (event) => {
     event.preventDefault()
+    console.log(this.state)
     this.props.addHabit(this.state)
   }
   render(){
@@ -47,6 +48,10 @@ class HabitForm extends React.Component{
             Frequency:
             <input id="frequency" name="frequency" type="number" onChange = {this.handleChange}/>
           </label><br/>
+          <label>
+            Notes(optional):
+            <textarea  id="notes" name="notes" type="text" onChange={this.handleChange}></textarea>
+          </label> <br/>
           <button type="submit">Start a Habit! </button>
         </form>
         </div>
