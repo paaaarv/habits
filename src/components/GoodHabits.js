@@ -1,5 +1,5 @@
 import React from 'react';
-
+import HabitForm from './HabitForm.js'
 
   const Habit = (name) => {
     return(
@@ -19,7 +19,9 @@ export default class GoodHabits extends React.Component{
   render(){
     return(
       <div>
-        <h1> hi </h1>
+      <h2> Habits To Support: </h2>
+      <HabitForm/>
+
       </div>
 
     )

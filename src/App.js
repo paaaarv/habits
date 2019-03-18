@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import HabitForm from './components/HabitForm.js'
 import Heading from './components/Heading.js'
 import GoodHabits from './components/GoodHabits'
 import BadHabits from './components/BadHabits'
@@ -9,7 +8,6 @@ class App extends Component {
     return (
       <div className="App">
       <Heading/>
-      <HabitForm/>
       <GoodHabits/> <BadHabits/>
       </div>
     );

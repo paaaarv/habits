@@ -1,5 +1,5 @@
 import React from 'react';
-
+import HabitForm from './HabitForm.js'
 
 
 export default class BadHabits extends React.Component{
@@ -8,7 +8,11 @@ export default class BadHabits extends React.Component{
 
   render(){
     return(
-      <h1> bye </h1> 
+      <div>
+      <h2> Habits To Drop: </h2>
+      <HabitForm/>
+
+      </div>
     )
   }
 }

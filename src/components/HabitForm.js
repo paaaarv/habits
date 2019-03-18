@@ -33,8 +33,10 @@ export default class HabitForm extends React.Component{
   }
   render(){
     return(
+      <div>
+      <h5> Add a new Habit </h5>
       <form onSubmit = {this.handleSubmit}>
-        <div>
+
           <label>
             Habit Name:
             <input id="title" name="title" type="text" onChange = {this.handleChange}/>
@@ -44,9 +46,8 @@ export default class HabitForm extends React.Component{
             <input id="frequency" name="frequency" type="number" onChange = {this.handleChange}/>
           </label><br/>
           <button type="submit">Start a Habit! </button>
-        </div>
         </form>
-
+        </div>
 
 
     )
