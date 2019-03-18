@@ -42,20 +42,20 @@ class HabitForm extends React.Component{
       <form onSubmit = {this.handleSubmit}>
 
           <label>
-            Habit Name
+            habit name
             <input id="title" name="title" type="text" onChange = {this.handleChange}/>
           </label><br/>
           <label>
-            Frequency
+            frequency
             <input id="frequency" name="frequency" type="number" onChange = {this.handleChange}/>
-             Per
+             per
             <select value={this.state.dayOrWeek} onChange={this.handleChange}>
               <option value="day">DAY</option>
               <option value="week">WEEK</option>
             </select>
           </label><br/>
           <label>
-            Notes(optional):
+            notes(optional):
             <textarea  id="notes" name="notes" type="text" onChange={this.handleChange}></textarea>
           </label> <br/>
           <button type="submit">Start a Habit! </button>
