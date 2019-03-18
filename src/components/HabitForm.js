@@ -12,6 +12,7 @@ class HabitForm extends React.Component{
     this.state = {
       title: '',
       frequency: 1,
+      dayOrWeek: 'week',
       notes: '',
 
     }
@@ -41,12 +42,17 @@ class HabitForm extends React.Component{
       <form onSubmit = {this.handleSubmit}>
 
           <label>
-            Habit Name:
+            Habit Name
             <input id="title" name="title" type="text" onChange = {this.handleChange}/>
           </label><br/>
           <label>
-            Frequency:
+            Frequency
             <input id="frequency" name="frequency" type="number" onChange = {this.handleChange}/>
+             Per
+            <select value={this.state.dayOrWeek} onChange={this.handleChange}>
+              <option value="day">DAY</option>
+              <option value="week">WEEK</option>
+            </select>
           </label><br/>
           <label>
             Notes(optional):
