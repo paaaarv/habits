@@ -14,6 +14,8 @@ class HabitForm extends React.Component{
       frequency: 1,
       dayOrWeek: 'week',
       notes: '',
+      type: props.type
+
 
     }
 

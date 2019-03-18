@@ -1,5 +1,6 @@
 import React from 'react';
 import HabitForm from './HabitForm.js'
+import { connect } from 'react-redux'
 
   const Habit = (name) => {
     return(
@@ -12,7 +13,7 @@ import HabitForm from './HabitForm.js'
   }
 
 
-export default class GoodHabits extends React.Component{
+class GoodHabits extends React.Component{
 
 
 
@@ -20,10 +21,19 @@ export default class GoodHabits extends React.Component{
     return(
       <div>
       <h2> Habits To Support: </h2>
-      <HabitForm/>
+      <HabitForm type= {"good"}/>
 
       </div>
 
     )
   }
 }
+
+const mapStateToProps = state => {
+  return{
+    habits : state.habits
+  }
+}
+
+
+export default connect(mapStateToProps)(GoodHabits)
