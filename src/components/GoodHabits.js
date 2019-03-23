@@ -8,8 +8,12 @@ import { connect } from 'react-redux'
 
 class GoodHabits extends React.Component{
 
-  renderHabits = () => {this.props.habits.map((habit) => <Habit name={habit.name} frequency={habit.frequency}/>)}
-
+  renderHabits = () => {if(this.props.habits == false){
+    return <p>"no habits...yet!"</p>
+  }
+  else{
+    debugger
+   return  this.props.habits.map(habit => <Habit name={habit.title} key={habit.id} frequency={habit.frequency} dayOrWeek={habit.dayOrWeek} /> )}}
 
 
 
@@ -18,8 +22,8 @@ class GoodHabits extends React.Component{
     return(
       <div>
       <h2> Habits To Support: </h2>
-
-
+        <HabitForm type="good"/>
+        {this.renderHabits()}
       </div>
 
     )
@@ -28,7 +32,7 @@ class GoodHabits extends React.Component{
 
 const mapStateToProps = state => {
   return{
-    habits : state.habits
+    habits : state.goodHabits
   }
 }
 

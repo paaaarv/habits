@@ -34,8 +34,14 @@ class HabitForm extends React.Component{
 
   handleSubmit = (event) => {
     event.preventDefault()
-    console.log(this.state)
     this.props.addHabit(this.state)
+    this.setState({
+      title: '',
+      frequency: 1,
+      dayOrWeek: 'week',
+      notes: '',
+      type: this.props.type
+    })
   }
   render(){
     return(

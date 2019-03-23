@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Habit = (name) => {
+const Habit = props => {
   return(
   <div>
-  <h2>{this.props.name} </h2> <br/>
-  <p> IDEAL: {this.props.frequency}</p>
+  <h4>{props.name} </h4> 
+  <p> IDEAL: {props.frequency} per {props.dayOrWeek}</p>
   </div>
 )
 
