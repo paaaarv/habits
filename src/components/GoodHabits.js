@@ -1,19 +1,16 @@
 import React from 'react';
+import Habit from './Habit.js'
 import HabitForm from './HabitForm.js'
 import { connect } from 'react-redux'
 
-  const Habit = (name) => {
-    return(
-    <div>
-    <h2>{this.props.name} </h2> <br/>
-    <p> IDEAL: {this.props.frequency}/week </p>
-    </div>
-  )
 
-  }
 
 
 class GoodHabits extends React.Component{
+
+  renderHabits = () => {this.props.habits.map((habit) => <Habit name={habit.name} frequency={habit.frequency}/>)}
+
+
 
 
 
@@ -21,7 +18,7 @@ class GoodHabits extends React.Component{
     return(
       <div>
       <h2> Habits To Support: </h2>
-      <HabitForm type= {"good"}/>
+
 
       </div>
 
