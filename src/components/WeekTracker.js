@@ -1,9 +1,10 @@
 import React from 'react'
 
 
-const Checkbox = (name,  onChange) => (
+const Checkbox = (name) => (
+
   <div>
-    <input type="checkbox" name={name} value={name} onChange={onChange}/>
+    <input type="checkbox"  name={name} value={name}/>
   </div>
 )
 
@@ -12,36 +13,43 @@ export default class WeekTracker extends React.Component{
   constructor(props){
     super(props)
 
+    this.state = {
+      monday: false,
+      tuesday: false,
+      wednesday: false,
+      thursday: false,
+      friday: false,
+      saturday: false,
+      sunday: false
+    }
   }
 
-  handleChange = () =>{
 
-  }
   render() {
     return(
       <div>
         <label>
           mon.
-        <Checkbox name="monday"  onChange={this.handleChange()}/>
+        <Checkbox name="monday"/>
         </label>
         <label>
           tues.
-        <Checkbox name="monday"  onChange={this.handleChange()}/>
+        <Checkbox name="monday" />
         </label> <label>
           wed.
-        <Checkbox name="monday"  onChange={this.handleChange()}/>
+        <Checkbox name="monday" />
         </label> <label>
           thurs.
-        <Checkbox name="monday"  onChange={this.handleChange()}/>
+        <Checkbox name="monday" />
         </label> <label>
           fri.
-        <Checkbox name="monday"  onChange={this.handleChange()}/>
+        <Checkbox name="monday" />
         </label> <label>
           sat.
-        <Checkbox name="monday"  onChange={this.handleChange()}/>
+        <Checkbox name="monday"/>
         </label> <label>
           sun.
-        <Checkbox name="monday"  onChange={this.handleChange()}/>
+        <Checkbox name="monday" />
         </label>
 
 

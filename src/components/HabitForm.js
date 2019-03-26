@@ -24,7 +24,7 @@ class HabitForm extends React.Component{
 
 
   handleChange = (event) => {
-
+    console.log(event.target.name)
     this.setState({
       [event.target.name]: event.target.value.toUpperCase()
     })
@@ -57,7 +57,7 @@ class HabitForm extends React.Component{
             frequency
             <input id="frequency" name="frequency" type="number" value= {this.state.frequency} onChange = {this.handleChange}/>
              per
-            <select value={this.state.dayOrWeek} onChange={this.handleChange}>
+            <select id="dayOrWeek" name="dayOrWeek" value={this.state.dayOrWeek} onChange={this.handleChange}>
               <option value="day">DAY</option>
               <option value="week">WEEK</option>
             </select>
