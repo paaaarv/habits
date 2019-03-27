@@ -4,7 +4,7 @@ import React from 'react'
 const Checkbox = (name) => (
 
   <div>
-    <input type="checkbox"  name={name} value={name}/>
+    <input type="checkbox"  name={name} value={name} />
   </div>
 )
 
@@ -23,33 +23,33 @@ export default class WeekTracker extends React.Component{
       sunday: false
     }
   }
-
+  
 
   render() {
     return(
       <div>
         <label>
           mon.
-        <Checkbox name="monday"/>
+        <Checkbox name="monday"  />
         </label>
         <label>
           tues.
-        <Checkbox name="monday" />
+        <Checkbox name="tuesday" />
         </label> <label>
           wed.
-        <Checkbox name="monday" />
+        <Checkbox name="wednesday" />
         </label> <label>
           thurs.
-        <Checkbox name="monday" />
+        <Checkbox name="thursday" />
         </label> <label>
           fri.
-        <Checkbox name="monday" />
+        <Checkbox name="friday" />
         </label> <label>
           sat.
-        <Checkbox name="monday"/>
+        <Checkbox name="saturday"/>
         </label> <label>
           sun.
-        <Checkbox name="monday" />
+        <Checkbox name="sunday" />
         </label>
 
 

@@ -12,7 +12,7 @@ class GoodHabits extends React.Component{
     return <p>"no habits...yet!"</p>
   }
   else{
-   return  this.props.habits.map(habit => <Habit name={habit.title} key={habit.id} frequency={habit.frequency} dayOrWeek={habit.dayOrWeek} /> )}}
+   return  this.props.habits.map((habit,id) => <Habit name={habit.title} key={id} frequency={habit.frequency} dayOrWeek={habit.dayOrWeek} /> )}}
 
 
 
