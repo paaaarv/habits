@@ -1,36 +1,17 @@
 import React from 'react'
+import Checkbox from './Checkbox'
 
-
-const Checkbox = (name) => (
-
-  <div>
-    <input type="checkbox"  name={name} value={name} />
-  </div>
-)
 
 
 export default class WeekTracker extends React.Component{
-  constructor(props){
-    super(props)
 
-    this.state = {
-      monday: false,
-      tuesday: false,
-      wednesday: false,
-      thursday: false,
-      friday: false,
-      saturday: false,
-      sunday: false
-    }
-  }
-  
 
   render() {
     return(
       <div>
         <label>
           mon.
-        <Checkbox name="monday"  />
+        <Checkbox name="monday" />
         </label>
         <label>
           tues.
