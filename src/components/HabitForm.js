@@ -10,7 +10,7 @@ class HabitForm extends React.Component{
 
 
     this.state = {
-      title: '',
+      name: '',
       frequency: 1,
       dayOrWeek: 'week',
       notes: '',
@@ -24,7 +24,7 @@ class HabitForm extends React.Component{
 
 
   handleChange = (event) => {
-  
+
     this.setState({
       [event.target.name]: event.target.value.toUpperCase()
     })
@@ -36,7 +36,7 @@ class HabitForm extends React.Component{
     event.preventDefault()
     this.props.addHabit(this.state)
     this.setState({
-      title: '',
+      name: '',
       frequency: 1,
       dayOrWeek: 'week',
       notes: '',
@@ -51,7 +51,7 @@ class HabitForm extends React.Component{
 
           <label>
             habit name
-            <input id="title" name="title" type="text" value={this.state.title} onChange = {this.handleChange}/>
+            <input id="name" name="name" type="text" value={this.state.name} onChange = {this.handleChange}/>
           </label><br/>
           <label>
             frequency

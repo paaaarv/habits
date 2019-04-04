@@ -12,7 +12,7 @@ class GoodHabits extends React.Component{
     return <p>"no habits...yet!"</p>
   }
   else{
-   return  this.props.habits.map((habit,id) => <Habit name={habit.title} key={id} frequency={habit.frequency} dayOrWeek={habit.dayOrWeek} /> )}}
+   return  this.props.habits.map((habit) => <Habit key={habit.id} id={habit.id} name={habit.name} delete={this.props.delete} frequency={habit.frequency} dayOrWeek={habit.dayOrWeek} type={habit.type}/> )}}
 
 
 
@@ -35,5 +35,10 @@ const mapStateToProps = state => {
   }
 }
 
+const mapDispatchToProps = dispatch =>{
+  return{
+    delete: habit => dispatch({type: "DELETE_HABIT" ,payload: habit})
+  }
+}
 
-export default connect(mapStateToProps)(GoodHabits)
+export default connect(mapStateToProps, mapDispatchToProps)(GoodHabits)
