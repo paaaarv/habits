@@ -1,4 +1,4 @@
-import React from 'react';
+
 import cuid from 'cuid'
 
 
@@ -13,14 +13,18 @@ export default function manageHabits(state={goodHabits:[], badHabits:[]}, action
         type: action.payload.type}
 
       if(action.payload.type === "good"){
-      return{goodHabits: state.goodHabits.concat(habit)}
+
+      return{...state, goodHabits: state.goodHabits.concat(habit)}
     }
       else{
-        return{badHabits: state.badHabits.concat(habit)}
+        return{...state,badHabits: state.badHabits.concat(habit)}
       }
   case "DELETE_HABIT":
       if(action.payload.type === 'good'){
-        return {goodHabits: state.goodHabits.filter(habit => habit.id !== action.payload.id)}
+        return {...state, goodHabits: state.goodHabits.filter(habit => habit.id !== action.payload.id)}
+      }
+      else{
+          return {...state, badHabits: state.badHabits.filter(habit => habit.id !== action.payload.id)}
       }
   default:
     return state

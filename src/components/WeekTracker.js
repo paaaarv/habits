@@ -5,10 +5,10 @@ import Checkbox from './Checkbox'
 
 export default class WeekTracker extends React.Component{
 
-  
+
   render() {
     return(
-      <div >
+      <div>
         <label>
           mon.
         <Checkbox name="monday" />
