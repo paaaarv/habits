@@ -1,5 +1,7 @@
 import React from 'react';
-
+import Form from 'react-bootstrap/Form'
+import FormCheck from 'react-bootstrap/FormCheck'
+import Radio from 'react-bootstrap'
 import { connect } from 'react-redux'
 
 
@@ -45,29 +47,24 @@ class HabitForm extends React.Component{
   }
   render(){
     return(
-      <div>
+      <div >
       <h5> Add a new Habit </h5>
-      <form onSubmit = {this.handleSubmit}>
+      <Form onSubmit = {this.handleSubmit}>
 
-          <label>
-            habit name
-            <input id="name" name="name" type="text" value={this.state.name} onChange = {this.handleChange}/>
-          </label><br/>
-          <label>
-            frequency
-            <input id="frequency" name="frequency" type="number" value= {this.state.frequency} onChange = {this.handleChange}/>
+
+            <Form.Control className="col-8"size="lg" placeholder="habit name" id="name" name="name" type="text" value={this.state.name} onChange = {this.handleChange}/>
+            <br/>
+
+            <Form.Control className="col-4" size="md" id="frequency" name="frequency" type="number" value= {this.state.frequency} onChange = {this.handleChange}/>
              per
-            <select id="dayOrWeek" name="dayOrWeek" value={this.state.dayOrWeek} onChange={this.handleChange}>
-              <option value="day">DAY</option>
-              <option value="week">WEEK</option>
-            </select>
-          </label><br/>
-          <label>
-            notes(optional):
-            <textarea  id="notes" name="notes" type="text" value={this.state.notes}onChange={this.handleChange}></textarea>
-          </label> <br/>
+
+
+              <Form.Check isValid type="radio" name="dayOrWeek" id="day" label="DAY"/>
+              <Form.Check isValid type="radio" name="dayOrWeek" id="week" label="WEEK"/>
+
+
           <button type="submit">Start a Habit! </button>
-        </form>
+        </Form>
         </div>
 
 
