@@ -26,7 +26,6 @@ class HabitForm extends React.Component{
 
 
   handleChange = (event) => {
-
     this.setState({
       [event.target.name]: event.target.value.toUpperCase()
     })
@@ -47,7 +46,7 @@ class HabitForm extends React.Component{
   }
   render(){
     return(
-      <div >
+      <div className='habitForm'>
       <h5> Add a new Habit </h5>
       <Form onSubmit = {this.handleSubmit}>
 
@@ -55,15 +54,13 @@ class HabitForm extends React.Component{
             <Form.Control className="col-8"size="lg" placeholder="habit name" id="name" name="name" type="text" value={this.state.name} onChange = {this.handleChange}/>
             <br/>
 
-            <Form.Control className="col-4" size="md" id="frequency" name="frequency" type="number" value= {this.state.frequency} onChange = {this.handleChange}/>
-             per
-
-
-              <Form.Check isValid type="radio" name="dayOrWeek" id="day" label="DAY"/>
-              <Form.Check isValid type="radio" name="dayOrWeek" id="week" label="WEEK"/>
-
-
-          <button type="submit">Start a Habit! </button>
+            <Form.Control style={{float:'left'}} className="col-3" size="md" id="frequency" name="frequency"  type="number" value= {this.state.frequency} onChange = {this.handleChange}/>
+             <br/> &nbsp; &nbsp;PER: &nbsp; &nbsp;<Form.Check inline isValid type="radio" name="dayOrWeek" value="day" id="day" label="DAY" onChange={this.handleChange}/>
+              <Form.Check inline isValid type="radio" name="dayOrWeek" value="week" id="week" label="WEEK" onChange={this.handleChange}/>
+              <br/><br/>
+          <div >
+          <button type="submit">start a habit! </button>
+          </div>
         </Form>
         </div>
 

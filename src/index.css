@@ -12,3 +12,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.habitForm{
+  
+  border-style: hidden;
+  margin: auto;
+  width: 40%;
+  text-align:left;
+  padding: 4%;
+  display: block;
+}
