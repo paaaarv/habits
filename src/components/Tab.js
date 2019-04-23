@@ -1,22 +1,23 @@
 import React from 'react'
-
-
-
-
+import GoodHabits from './GoodHabits'
+import BadHabits from './BadHabits'
+import { NavLink } from 'react-router-dom'
 export default class Tab extends React.Component{
 
-
-
-  handleClick = (name) => {
-    console.log(name)
-  }
-
   render(){
+
     return(
       <div>
-
-        <h3 onClick={this.handleClick(this.props.name)}> this.props.name </h3>
-      </div>
+      <NavLink to="/">
+        new habit
+      </NavLink>
+      <NavLink to="/goodhabits">
+        good habits
+      </NavLink>
+      <NavLink to="/badhabits">
+        bad habits
+      </NavLink>
+    </div>
 
     )
   }
