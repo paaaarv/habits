@@ -8,7 +8,7 @@ export default class WeekTracker extends React.Component{
   constructor(props){
     super(props)
 
-    this.state ={
+    this.state = {
       monday: false,
       tuesday: false,
       wednesday: false,
@@ -19,13 +19,16 @@ export default class WeekTracker extends React.Component{
     }
   }
 
-  handleChange = () =>{
-    console.log('hi')
-    this.setState={
-      ...this.state,
+  handleChange = (event) =>{
+    this.setState({
+      [event.target.name]: event.target.value,
+      ...this.state
+    })
 
-    }
+
   }
+
+
 
   render() {
     return(
@@ -36,22 +39,22 @@ export default class WeekTracker extends React.Component{
         </label>
         <label>
           tues.
-        <Checkbox name="tuesday" />
+        <Checkbox name="tuesday" checkClicked={this.handleChange} />
         </label> <label>
           wed.
-        <Checkbox name="wednesday" />
+        <Checkbox name="wednesday" checkClicked={this.handleChange}/>
         </label> <label>
           thurs.
-        <Checkbox name="thursday" />
+        <Checkbox name="thursday" checkClicked={this.handleChange}/>
         </label> <label>
           fri.
-        <Checkbox name="friday" />
+        <Checkbox name="friday" checkClicked={this.handleChange} />
         </label> <label>
           sat.
-        <Checkbox name="saturday"/>
+        <Checkbox name="saturday"checkClicked={this.handleChange}/>
         </label> <label>
           sun.
-        <Checkbox name="sunday" />
+        <Checkbox name="sunday" checkClicked={this.handleChange}/>
         </label>
 
 
