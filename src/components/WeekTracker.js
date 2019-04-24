@@ -5,13 +5,34 @@ import Checkbox from './Checkbox'
 
 export default class WeekTracker extends React.Component{
 
+  constructor(props){
+    super(props)
+
+    this.state ={
+      monday: false,
+      tuesday: false,
+      wednesday: false,
+      thursday: false,
+      friday: false,
+      saturday: false,
+      sunday: false
+    }
+  }
+
+  handleChange = () =>{
+    console.log('hi')
+    this.setState={
+      ...this.state,
+
+    }
+  }
 
   render() {
     return(
       <div>
         <label>
           mon.
-        <Checkbox name="monday" />
+        <Checkbox name="monday" checkClicked={this.handleChange}/>
         </label>
         <label>
           tues.
