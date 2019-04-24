@@ -8,13 +8,13 @@ export default class Tab extends React.Component{
 
     return(
       <div>
-      <NavLink to="/">
-        new habit &nbsp;&nbsp;&nbsp;
+      <NavLink className="col-4" to="/">
+        new habit
       </NavLink>
-      <NavLink to="/goodhabits">
-        good habits &nbsp;&nbsp;&nbsp;
+      <NavLink className="col-4" to="/goodhabits">
+        good habits
       </NavLink>
-      <NavLink to="/badhabits">
+      <NavLink className="col-4" to="/badhabits">
         bad habits
       </NavLink>
     </div>
