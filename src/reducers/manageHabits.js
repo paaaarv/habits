@@ -12,15 +12,17 @@ export default function manageHabits(state={goodHabits:[], badHabits:[]}, action
         dayOrWeek: action.payload.dayOrWeek,
         type: action.payload.type}
 
-      if(action.payload.type === "good"){
+        console.log(habit)
+
+      if(action.payload.type === "GOOD"){
 
       return{...state, goodHabits: state.goodHabits.concat(habit)}
     }
       else{
-        return{...state,badHabits: state.badHabits.concat(habit)}
+        return{...state, badHabits: state.badHabits.concat(habit)}
       }
   case "DELETE_HABIT":
-      if(action.payload.type === 'good'){
+      if(action.payload.type === 'GOOD'){
         return {...state, goodHabits: state.goodHabits.filter(habit => habit.id !== action.payload.id)}
       }
       else{

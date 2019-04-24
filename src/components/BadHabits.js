@@ -9,8 +9,6 @@ export default class BadHabits extends React.Component{
   render(){
     return(
       <div>
-      <h2> Habits To Drop: </h2>
-      <HabitForm type={"bad"}/>
 
       </div>
     )

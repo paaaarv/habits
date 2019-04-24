@@ -20,8 +20,6 @@ class GoodHabits extends React.Component{
   render(){
     return(
       <div>
-      <h2> Habits To Support: </h2>
-        <HabitForm type="good"/>
         {this.renderHabits()}
       </div>
 
