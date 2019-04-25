@@ -47,7 +47,7 @@ class HabitForm extends React.Component{
   render(){
     return(
       <div className='habitForm'>
-      <h5> add a new habit: </h5><br/> 
+      <h5> add a new habit: </h5><br/>
       <Form onSubmit = {this.handleSubmit}>
 
 
@@ -61,9 +61,9 @@ class HabitForm extends React.Component{
               <Form.Check inline isValid type="radio" name="type" value="good" id="good" label="GOOD" onChange={this.handleChange}/>
                <Form.Check inline isValid type="radio" name="type" value="bad" id="bad" label="BAD" onChange={this.handleChange}/>
 
-          <div >
+               <br/> <br/> 
           <button type="submit">start a habit! </button>
-          </div>
+
         </Form>
         </div>
 

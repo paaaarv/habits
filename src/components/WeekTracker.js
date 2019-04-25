@@ -1,6 +1,6 @@
 import React from 'react'
 import Checkbox from './Checkbox'
-
+import Progress from './Progress'
 
 
 export default class WeekTracker extends React.Component{
@@ -57,7 +57,7 @@ export default class WeekTracker extends React.Component{
         <Checkbox name="sunday" checkClicked={this.handleChange}/>
         </label>
 
-
+        <Progress/>
       </div>
     )
   }
