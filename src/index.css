@@ -29,3 +29,18 @@ code {
 
 
 }
+
+.progressBar{
+  height: 20px;
+  width: 75%;
+  border-radius: 30px;
+  border: 2px solid black;
+
+}
+
+.filledProgress{
+  height: 100%;
+  background: blue;
+  border-radius: inherit;
+
+}

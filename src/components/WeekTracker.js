@@ -56,8 +56,6 @@ export default class WeekTracker extends React.Component{
           sun.
         <Checkbox name="sunday" checkClicked={this.handleChange}/>
         </label>
-
-        <Progress/>
       </div>
     )
   }

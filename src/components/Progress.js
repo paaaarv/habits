@@ -1,6 +1,13 @@
 import React from 'react'
 
 
+const Percentage = (props) => {
+  return(
+    <div className="filledProgress" style={{width: `${props.progress}%`}}>
+    </div>
+  )
+}
+
 
 
 export default class Progress extends React.Component{
@@ -9,30 +16,14 @@ export default class Progress extends React.Component{
 
   render(){
     return(
+    <div className="progressBar">
+      <Percentage progress={20}/>
+    </div>
 
-      <svg height="1000" width="1000">
-      <circle
-        stroke="blue"
-        stroke-width="10"
-        fill="transparent"
-        r="50"
-        cx="100"
-        cy="100"
-
-
-
-      />
-
-      </svg>
 
 
 
     )
   }
-
-
-
-
-
 
 }
