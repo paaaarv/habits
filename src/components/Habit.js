@@ -9,11 +9,11 @@ const Habit = props => {
   <h4>{props.name} </h4>
   <p> ideal: {props.frequency} per {props.dayOrWeek}</p>
   <button onClick={()=> props.delete(props)}> delete habit </button>
-  <WeekTracker/>
   </div>
-  <div className= 'col-5 d-flex align-items-center'>
-  <h3> 20% </h3>
-  <Progress/>
+  </div> 
+  <div className = "row">
+  <div className="col-5">
+  <WeekTracker/>
   </div>
   </div>
   </div>

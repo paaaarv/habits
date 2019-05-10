@@ -9,33 +9,22 @@ export default class WeekTracker extends React.Component{
     super(props)
 
     this.state = {
-      monday: false,
-      tuesday: false,
-      wednesday: false,
-      thursday: false,
-      friday: false,
-      saturday: false,
-      sunday: false
+      count: 0
     }
   }
 
 
-  checkProgress = () => {
-    var arr = 0
-    for (var day in this.state){
-      if(this.state[day] == true){
-        arr+=1
-      }
+  handleChange = (checked) =>{
+    if(checked == true){
+      this.setState({
+        count: this.state.count+1
+      })}
+    else{
+      this.setState({
+        count: this.state.count-1
+      })
     }
-    console.log(arr)
-  }
 
-  handleChange = (name, checked) =>{
-    debugger
-    this.setState({
-      [name]: `${checked}`,
-      ...this.state
-    })
 
   }
 
@@ -44,7 +33,9 @@ export default class WeekTracker extends React.Component{
 
   render() {
     return(
-      <div>
+      <div className="container-fluid">
+        <div className="row justify-content-center">
+        <div className="col">
         <label>
           mon.
         <Checkbox name="monday" checkClicked={this.handleChange}/>
@@ -68,6 +59,12 @@ export default class WeekTracker extends React.Component{
           sun.
         <Checkbox name="sunday" checkClicked={this.handleChange}/>
         </label>
+        </div>
+        <div className= 'col'>
+        <h3> 20% </h3>
+        <Progress/>
+        </div>
+        </div>
       </div>
     )
   }
