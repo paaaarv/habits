@@ -14,17 +14,19 @@ export default class Checkbox extends React.Component{
 
 
 
-  handleCheck=()=>{
+
+  handleCheck=(e)=>{
+
     this.setState({
-      isChecked: !this.state.isChecked
-    })
+      isChecked: true},this.props.checkClicked(e))
+
   }
 
 
   render(){
     return(
   <div>
-    <input type="checkbox" checked={this.state.checked} name={this.props.name} value= {this.state.checked} onClick={()=>this.handleCheck} onClick={(e) =>this.props.checkClicked(e)}/>
+    <input type="checkbox" checked={this.state.checked} name={this.props.name} value= {this.state.isChecked} onClick={(e)=>this.handleCheck(e)}/>
   </div>
 )
 }

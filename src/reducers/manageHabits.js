@@ -12,7 +12,6 @@ export default function manageHabits(state={goodHabits:[], badHabits:[]}, action
         dayOrWeek: action.payload.dayOrWeek,
         type: action.payload.type}
 
-        console.log(habit)
 
       if(action.payload.type === "GOOD"){
 

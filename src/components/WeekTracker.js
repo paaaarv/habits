@@ -19,14 +19,26 @@ export default class WeekTracker extends React.Component{
     }
   }
 
-  handleChange = (event) =>{
+
+  checkProgress = () => {
+    var arr = 0
+    for (var day in this.state){
+      if(this.state[day] == true){
+        arr+=1
+      }
+    }
+    console.log(arr)
+  }
+
+  handleChange = (name, checked) =>{
+    debugger
     this.setState({
-      [event.target.name]: event.target.value,
+      [name]: `${checked}`,
       ...this.state
     })
 
-
   }
+
 
 
 

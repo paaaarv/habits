@@ -41,7 +41,7 @@ class HabitForm extends React.Component{
       frequency: 1,
       dayOrWeek: 'week',
       notes: '',
-      type: this.props.type
+      type: 'good'
     })
   }
   render(){
@@ -61,7 +61,7 @@ class HabitForm extends React.Component{
               <Form.Check inline isValid type="radio" name="type" value="good" id="good" label="GOOD" onChange={this.handleChange}/>
                <Form.Check inline isValid type="radio" name="type" value="bad" id="bad" label="BAD" onChange={this.handleChange}/>
 
-               <br/> <br/> 
+               <br/> <br/>
           <button type="submit">start a habit! </button>
 
         </Form>
