@@ -9,7 +9,6 @@ export default function manageHabits(state={goodHabits:[], badHabits:[]}, action
         id: cuid(),
         name: action.payload.name,
         frequency: action.payload.frequency,
-        dayOrWeek: action.payload.dayOrWeek,
         type: action.payload.type}
 
 

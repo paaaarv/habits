@@ -14,8 +14,6 @@ class HabitForm extends React.Component{
     this.state = {
       name: '',
       frequency: 1,
-      dayOrWeek: 'week',
-      notes: '',
       type: 'good'
 
 
@@ -39,8 +37,6 @@ class HabitForm extends React.Component{
     this.setState({
       name: '',
       frequency: 1,
-      dayOrWeek: 'week',
-      notes: '',
       type: 'good'
     })
   }
@@ -55,8 +51,7 @@ class HabitForm extends React.Component{
             <br/>
 
             <Form.Control style={{float:'left'}} className="col-2" size="sm" id="frequency" name="frequency"  type="number" value= {this.state.frequency} onChange = {this.handleChange}/>
-           &nbsp; &nbsp;PER: &nbsp; &nbsp;<Form.Check inline isValid type="radio" name="dayOrWeek" value="day" id="day" label="DAY" onChange={this.handleChange}/>
-              <Form.Check inline isValid type="radio" name="dayOrWeek" value="week" id="week" label="WEEK" onChange={this.handleChange}/>
+           &nbsp; &nbsp;PER WEEK
               <br/><br/> TYPE OF HABIT: &nbsp; &nbsp;
               <Form.Check inline isValid type="radio" name="type" value="good" id="good" label="GOOD" onChange={this.handleChange}/>
                <Form.Check inline isValid type="radio" name="type" value="bad" id="bad" label="BAD" onChange={this.handleChange}/>
