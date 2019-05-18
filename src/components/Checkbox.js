@@ -16,9 +16,9 @@ export default class Checkbox extends React.Component{
 
 
   handleCheck=(e)=>{
-
+    e.persist()
     this.setState({
-      isChecked: !this.state.isChecked}, ()=>{this.props.checkClicked(this.state.isChecked)})
+      isChecked: !this.state.isChecked}, ()=>{this.props.checkClicked(e)})
 
   }
 

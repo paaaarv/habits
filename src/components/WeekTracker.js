@@ -1,9 +1,9 @@
 import React from 'react'
 import Checkbox from './Checkbox'
 import Progress from './Progress'
+import { connect } from 'react-redux'
 
-
-export default class WeekTracker extends React.Component{
+class WeekTracker extends React.Component{
 
   constructor(props){
     super(props)
@@ -14,8 +14,9 @@ export default class WeekTracker extends React.Component{
   }
 
 
-  handleChange = (checked) =>{
-    if(checked === true){
+  handleChange = (e) =>{
+    if(e.target.checked === true){
+      this.props.addCheck(e)
       this.setState({
         count: this.state.count+1}, this.handlePercent
       )}
@@ -81,3 +82,20 @@ export default class WeekTracker extends React.Component{
     )
   }
 }
+
+
+  const mapStateToProps = state =>{
+    return{
+      checkboxes: state.checked
+    }
+  }
+
+
+  const mapDispatchToProps = dispatch =>{
+    return{
+      addCheck: check => dispatch({type:"ADD_CHECK", payload: check})
+    }
+  }
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(WeekTracker)
