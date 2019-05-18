@@ -12,14 +12,14 @@ class GoodHabits extends React.Component{
     return <p>"no habits...yet!"</p>
   }
   else{
-   return  this.props.habits.map((habit) => <Habit key={habit.id} id={habit.id} name={habit.name} delete={this.props.delete} frequency={habit.frequency} dayOrWeek={habit.dayOrWeek} type={habit.type}/> )}}
+   return  this.props.habits.map((habit) => <Habit key={habit.id} id={habit.id} name={habit.name} delete={this.props.delete} frequency={habit.frequency} type={habit.type}/> )}}
 
 
 
 
   render(){
     return(
-      <div className="container-fluid">
+      <div>
         {this.renderHabits()}
       </div>
 

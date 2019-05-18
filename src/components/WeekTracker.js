@@ -7,7 +7,7 @@ export default class WeekTracker extends React.Component{
 
   constructor(props){
     super(props)
-
+     this.percentage = 0
     this.state = {
       count: 0
     }
@@ -15,27 +15,37 @@ export default class WeekTracker extends React.Component{
 
 
   handleChange = (checked) =>{
-    if(checked == true){
+    if(checked === true){
       this.setState({
-        count: this.state.count+1
-      })}
+        count: this.state.count+1}, this.handlePercent
+      )}
     else{
       this.setState({
-        count: this.state.count-1
-      })
+        count: this.state.count-1}, this.handlePercent
+      )
     }
 
 
   }
 
 
+  handlePercent = () => {
+    if(this.props.frequency < this.state.count){
+
+      this.percentage=100
+    }
+    else{
+      this.percentage=(this.state.count/this.props.frequency) * 100
+    }
+  }
 
 
   render() {
+
     return(
       <div className="container-fluid">
         <div className="row justify-content-center">
-        <div className="col">
+        <div className="col-5">
         <label>
           mon.
         <Checkbox name="monday" checkClicked={this.handleChange}/>
@@ -60,9 +70,11 @@ export default class WeekTracker extends React.Component{
         <Checkbox name="sunday" checkClicked={this.handleChange}/>
         </label>
         </div>
-        <div className= 'col'>
-        <h3> 20% </h3>
-        <Progress/>
+        <div className= 'col-2 justify-content-center'>
+        <h3> {this.percentage}% </h3>
+        </div>
+        <div className="col-5 justify-content-center">
+        <Progress percent={this.percentage} />
         </div>
         </div>
       </div>

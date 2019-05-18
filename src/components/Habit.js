@@ -7,13 +7,13 @@ const Habit = props => {
   <div className="row">
   <div className='col'>
   <h4>{props.name} </h4>
-  <p> ideal: {props.frequency} PER WEEK</p>
+  <p> ideal: {props.frequency} DAYS PER WEEK</p>
   <button onClick={()=> props.delete(props)}> delete habit </button>
   </div>
   </div>
   <div className = "row">
   <div className="col">
-  <WeekTracker/>
+  <WeekTracker frequency={props.frequency}/>
   </div>
   </div>
   </div>
