@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import manageHabits from './reducers/manageHabits'
+import rootReducer  from './reducers/manageHabits'
 import {createStore} from 'redux'
 import { Provider } from 'react-redux'
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-let store = createStore(manageHabits)
+let store = createStore(rootReducer)
 
 ReactDOM.render(
   <Provider store = {store}>

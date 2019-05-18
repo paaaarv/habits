@@ -1,7 +1,13 @@
 
-import cuid from 'cuid'
+import cuid from 'cuid';
+import  { combineReducers} from 'redux';
+import manageCheckboxes from './manageCheckboxes'
+
+  const rootReducer = combineReducers({
+    manageHabits,manageCheckboxes});
 
 
+    
 export default function manageHabits(state={goodHabits:[], badHabits:[]}, action){
   switch(action.type){
     case "ADD_HABIT":

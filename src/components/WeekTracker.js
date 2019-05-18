@@ -11,12 +11,13 @@ class WeekTracker extends React.Component{
     this.state = {
       count: 0
     }
+    this.handleChange = this.handleChange.bind(this)
   }
-
 
   handleChange = (e) =>{
     if(e.target.checked === true){
-      this.props.addCheck(e)
+      debugger
+      this.props.addCheck(e.target)
       this.setState({
         count: this.state.count+1}, this.handlePercent
       )}
