@@ -76,7 +76,7 @@ class WeekTracker extends React.Component{
         <h3> {this.percentage}% </h3>
         </div>
         <div className="col-5 justify-content-center">
-        <Progress percent={this.percentage} />
+        <Progress percent={this.percentage}/>
         </div>
         </div>
       </div>

@@ -13,8 +13,6 @@ const Percentage = (props) => {
 
 export default class Progress extends React.Component{
 
-
-
   render(){
 
     return(

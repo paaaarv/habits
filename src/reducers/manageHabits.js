@@ -6,8 +6,8 @@ import manageCheckboxes from './manageCheckboxes'
   const rootReducer = combineReducers({
     manageHabits,manageCheckboxes});
 
-
     
+
 export default function manageHabits(state={goodHabits:[], badHabits:[]}, action){
   switch(action.type){
     case "ADD_HABIT":
