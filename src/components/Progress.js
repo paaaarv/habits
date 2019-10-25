@@ -1,23 +1,20 @@
 import React from 'react'
 
 
-const Percentage = (props) => {
-  return(
-    <div className="filledProgress" style={{width: `${props.progress}%`}}>
-    </div>
-
-  )
-}
 
 
 
-export default class Progress extends React.Component{
+export default class Percentage extends React.Component{
+
+  componentWillReceiveProps(props){
+  }
 
   render(){
 
     return(
     <div className="progressBar">
-      <Percentage progress={this.props.percent}/>
+    <div className="filledProgress" style={{width: `${this.props.percent}%`}}>
+    </div>
     </div>
 
 

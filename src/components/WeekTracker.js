@@ -1,6 +1,6 @@
 import React from 'react'
 import Checkbox from './Checkbox'
-import Progress from './Progress'
+import Percentage from './Progress'
 import { connect } from 'react-redux'
 
 class WeekTracker extends React.Component{
@@ -9,23 +9,27 @@ class WeekTracker extends React.Component{
     super(props)
      this.percentage = 0
     this.state = {
-      count: 0
+      count: 0,
+      percent: 0
     }
     this.handleChange = this.handleChange.bind(this)
   }
 
   handleChange = (e) =>{
     if(e.target.checked === true){
-      debugger
       this.props.addCheck(e.target)
       this.setState({
-        count: this.state.count+1}, this.handlePercent
-      )}
-    else{
-      this.setState({
-        count: this.state.count-1}, this.handlePercent
+        ...this.state,
+        count: this.state.count+1}, () => {this.handlePercent()}
       )
     }
+    else{
+      this.setState({
+        ...this.state,
+        count: this.state.count-1}, () => {this.handlePercent()}
+      )
+    }
+
 
 
   }
@@ -34,11 +38,15 @@ class WeekTracker extends React.Component{
   handlePercent = () => {
     if(this.props.frequency < this.state.count){
 
-      this.percentage=100
+     var percentage=100
     }
     else{
-      this.percentage=(this.state.count/this.props.frequency) * 100
+     var percentage=Math.round((this.state.count/this.props.frequency) * 100)
     }
+    this.setState({
+      ...this.state,
+      percent: percentage
+    })
   }
 
 
@@ -73,10 +81,10 @@ class WeekTracker extends React.Component{
         </label>
         </div>
         <div className= 'col-2 justify-content-center'>
-        <h3> {this.percentage}% </h3>
+        <h3> {this.state.percent}% </h3>
         </div>
         <div className="col-5 justify-content-center">
-        <Progress percent={this.percentage}/>
+        <Percentage percent = {this.state.percent}/>
         </div>
         </div>
       </div>
