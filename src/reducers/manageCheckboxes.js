@@ -3,7 +3,9 @@ export default function manageCheckboxes(state={checked:[]}, action){
 
     case "ADD_CHECK":
       debugger
-      return {checked: action.payload.name, ...state}
+      console.log("hi")
+      return {checked: [action.payload.name, ...state.checked]}
+
   default:
     return state
 }

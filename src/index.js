@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import rootReducer  from './reducers/manageHabits'
+import rootReducer  from './reducers/manageReducers'
 import {createStore} from 'redux'
 import { Provider } from 'react-redux'
+import thunk from 'redux-thunk'
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 

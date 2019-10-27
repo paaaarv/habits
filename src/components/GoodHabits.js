@@ -1,6 +1,5 @@
 import React from 'react';
 import Habit from './Habit.js'
-import HabitForm from './HabitForm.js'
 import { connect } from 'react-redux'
 
 
@@ -8,7 +7,9 @@ import { connect } from 'react-redux'
 
 class GoodHabits extends React.Component{
 
-  renderHabits = () => {if(this.props.habits == false){
+  renderHabits = () => {
+    debugger
+    if(this.props.habits == undefined){
     return <p>"no habits...yet!"</p>
   }
   else{

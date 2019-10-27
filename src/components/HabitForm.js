@@ -18,6 +18,7 @@ class HabitForm extends React.Component{
 
 
     }
+    this.handleSubmit = this.handleSubmit.bind(this)
 
   }
 
@@ -33,6 +34,7 @@ class HabitForm extends React.Component{
 
   handleSubmit = (event) => {
     event.preventDefault()
+    debugger
     this.props.addHabit(this.state)
     this.setState({
       name: '',
