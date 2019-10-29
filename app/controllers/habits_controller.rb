@@ -1,3 +1,5 @@
+require 'pry'
+
 class HabitsController < ApplicationController
 
   def show
@@ -11,6 +13,7 @@ class HabitsController < ApplicationController
   end
 
   def create
+    binding.pry
     @habit = Habit.create(params)
     if @habit.valid?
     end

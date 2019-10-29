@@ -3,8 +3,7 @@ import Form from 'react-bootstrap/Form'
 import FormCheck from 'react-bootstrap/FormCheck'
 import Radio from 'react-bootstrap'
 import { connect } from 'react-redux'
-
-
+import { newHabits } from '../actions/habitsActions.js'
 
 class HabitForm extends React.Component{
   constructor(props){
@@ -35,6 +34,7 @@ class HabitForm extends React.Component{
   handleSubmit = (event) => {
     event.preventDefault()
     debugger
+    this.props.newHabit(event.target)
     this.props.addHabit(this.state)
     this.setState({
       name: '',
@@ -74,7 +74,8 @@ class HabitForm extends React.Component{
 
   const mapDispatchToProps = dispatch =>{
     return{
-      addHabit: formData => dispatch({type:"ADD_HABIT", payload: formData})
+      addHabit: formData => dispatch({type:"ADD_HABIT", payload: formData}),
+      newHabit: () => dispatch(newHabits())
     }
   }
 
