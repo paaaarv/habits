@@ -1,21 +1,24 @@
 
-export function newHabits = (data) =>{
+export const newHabits=(data)=>{
+
   return(dispatch) => {
-    dispatch({type: 'new_habit'})
     debugger
+    dispatch({type: 'new_habit'})
       fetch('/habits', {
     method: 'post',
-    body: JSON.stringify(data)
+    accept: 'application/json',
+    body: JSON.stringify()
   }).then(function(response) {
-    console.log( response.json())
+  console.log('hi')
   })
 }
 }
 
- //const fetchHabits = () =>{
-//  return(dispatch)=>{
-//    dispatch({type: "add_habit"})
-  //  debugger
-//    fetch('https://localhost:3000/habits/1.json').then(response=>{return response.json()}).then(console.log("hi"))
-//  }
-//}
+
+export const fetchHabits = () =>{
+  return(dispatch)=>{
+    dispatch({type: "show_habit"})
+    debugger
+  fetch('habits/1.json').then(response=>{console.log( response.json())})
+  }
+}

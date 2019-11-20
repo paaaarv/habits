@@ -9,7 +9,7 @@ export default class Heading extends React.Component{
 
         <Jumbotron>
           <Container>
-            <h1> || &nbsp;&nbsp;&nbsp;H A B I T S &nbsp;&nbsp;&nbsp;|| </h1><br/>
+            <h1 className="heading"> || &nbsp;&nbsp;&nbsp;H A B I T S &nbsp;&nbsp;&nbsp;|| </h1><br/>
           </Container>
         </Jumbotron>
 

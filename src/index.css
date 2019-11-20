@@ -30,6 +30,12 @@ code {
 
 
 }
+.heading {
+  font-family: 'Dosis', sans-serif;
+  font-size: 80px;
+
+
+}
 
 .progressBar{
   height: 20px;

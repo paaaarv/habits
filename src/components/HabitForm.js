@@ -33,8 +33,6 @@ class HabitForm extends React.Component{
 
   handleSubmit = (event) => {
     event.preventDefault()
-    debugger
-    this.props.newHabit(event.target)
     this.props.addHabit(this.state)
     this.setState({
       name: '',
@@ -72,10 +70,9 @@ class HabitForm extends React.Component{
 
   }
 
-  const mapDispatchToProps = dispatch =>{
+  const mapDispatchToProps = (dispatch) =>{
     return{
-      addHabit: formData => dispatch({type:"ADD_HABIT", payload: formData}),
-      newHabit: () => dispatch(newHabits())
+      addHabit: formData => dispatch({type:"ADD_HABIT", payload: formData})
     }
   }
 

@@ -4,26 +4,18 @@ import Percentage from './Progress'
 import { connect } from 'react-redux'
 
 class WeekTracker extends React.Component{
-
   constructor(props){
     super(props)
-     this.percentage = 0
-    this.state = {
-      count: 0,
-      percent: 0
-    }
     this.handleChange = this.handleChange.bind(this)
   }
 
   handleChange = (e) =>{
     if(e.target.checked === true){
       this.props.addCheck(e.target)
-      this.setState({
-        ...this.state,
-        count: this.state.count+1}, () => {this.handlePercent()}
-      )
-    }
+
+      this.handlePercent()}
     else{
+      this.props.deleteCheck(e.target)
       this.setState({
         ...this.state,
         count: this.state.count-1}, () => {this.handlePercent()}
@@ -36,21 +28,19 @@ class WeekTracker extends React.Component{
 
 
   handlePercent = () => {
-    if(this.props.frequency < this.state.count){
+    if(this.props.frequency < this.props.checkboxes){
 
      var percentage=100
     }
     else{
-     var percentage=Math.round((this.state.count/this.props.frequency) * 100)
+      debugger
+     var percentage=Math.round((this.props.checkboxes/this.props.frequency) * 100)
     }
-    this.setState({
-      ...this.state,
-      percent: percentage
-    })
   }
 
 
   render() {
+    var percentage = 0
     return(
       <div className="container-fluid">
         <div className="row justify-content-center">
@@ -80,10 +70,10 @@ class WeekTracker extends React.Component{
         </label>
         </div>
         <div className= 'col-2 justify-content-center'>
-        <h3> {this.state.percent}% </h3>
+        <h3> {percentage}% </h3>
         </div>
         <div className="col-5 justify-content-center">
-        <Percentage percent = {this.state.percent}/>
+        <Percentage percent = {percentage}/>
         </div>
         </div>
       </div>
@@ -92,16 +82,17 @@ class WeekTracker extends React.Component{
 }
 
 
-  const mapStateToProps = state =>{
+  const mapStateToProps = state => {
     return{
-      checkboxes: state.checked
+      checkboxes: state.checkboxes.check
     }
   }
 
 
   const mapDispatchToProps = dispatch =>{
     return{
-      addCheck: check => dispatch({type:"ADD_CHECK", payload: check})
+      addCheck: check => dispatch({type:"ADD_CHECK", payload: check}),
+      deleteCheck: check => dispatch({type:"DELETE_CHECK", payload:check})
     }
   }
 

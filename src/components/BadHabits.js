@@ -6,7 +6,7 @@ class BadHabits extends React.Component{
 
 
 
-  renderHabits = () => {if(this.props.habits == false){
+  renderHabits = () => {if(this.props.habits == undefined){
     return <p>"no habits...yet!"</p>
   }
   else{

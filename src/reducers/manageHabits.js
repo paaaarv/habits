@@ -15,20 +15,20 @@ export default function manageHabits(state={goodHabits:[], badHabits:[]}, action
 
       if(action.payload.type == "good" || action.payload.type ==
     "GOOD"){
-
-
-      return{...state, goodHabits: [state.goodHabits.push(habit)]}
+      alert('hi youve reached')
+      return {goodHabits: [state.goodHabits.push(habit)], ...state}
     }
       else{
         return{...state, badHabits: [state.badHabits.push(habit)]}
-      }
+      };
   case "DELETE_HABIT":
+    debugger
       if(action.payload.type == 'good' || action.payload.type == 'GOOD' ){
         return {...state, goodHabits: [state.goodHabits.filter(habit => habit.id !== action.payload.id)]}
       }
       else{
           return {...state, badHabits: [state.badHabits.filter(habit => habit.id !== action.payload.id)]}
-      }
+      };
   default:
     return state
 }

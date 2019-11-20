@@ -6,7 +6,8 @@ import { connect } from 'react-redux'
 class GoodHabits extends React.Component{
 
   renderHabits = () => {
-    if(this.props.habits == undefined){
+    
+    if(this.props.habits == undefined || this.props.habits.length == 0){
     return <p>"no habits...yet!"</p>
   }
   else{
@@ -26,7 +27,7 @@ class GoodHabits extends React.Component{
 
 const mapStateToProps = state => {
   return{
-    habits : state.goodHabits
+    habits : state.habits.goodHabits
   }
 }
 

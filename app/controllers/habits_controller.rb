@@ -14,14 +14,15 @@ class HabitsController < ApplicationController
 
   def create
     binding.pry
-    @habit = Habit.create(params)
+    @habit = Habit.create(habits_params)
     if @habit.valid?
     end
   end
 
-  def update
+  private
 
-  end
-
+    def habits_params
+      params.require(:habit).permit(:name, :frequency, :type, :id)
+    end
 
 end
