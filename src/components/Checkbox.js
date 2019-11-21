@@ -23,7 +23,7 @@ export default class Checkbox extends React.Component{
   render(){
     return(
   <div>
-    <input type="checkbox" checked={this.state.checked} name={this.props.name} value= {this.state.isChecked} onClick={(e)=>this.handleCheck(e)}/>
+    <input type="checkbox" frequency-data= {this.props.data} checked={this.state.checked} name={this.props.name} value= {this.state.isChecked} onClick={(e)=>this.handleCheck(e)}/>
   </div>
 )
 }

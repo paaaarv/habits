@@ -11,32 +11,20 @@ class WeekTracker extends React.Component{
 
   handleChange = (e) =>{
     if(e.target.checked === true){
-      this.props.addCheck(e.target)
+      this.props.addCheck(e.target)}
 
-      this.handlePercent()}
     else{
       this.props.deleteCheck(e.target)
-      this.setState({
-        ...this.state,
-        count: this.state.count-1}, () => {this.handlePercent()}
-      )
+
     }
+  }
 
-
-
+  componentDidUpdate(){
+    this.props.percentage(this.props)
   }
 
 
-  handlePercent = () => {
-    if(this.props.frequency < this.props.checkboxes){
 
-     var percentage=100
-    }
-    else{
-      debugger
-     var percentage=Math.round((this.props.checkboxes/this.props.frequency) * 100)
-    }
-  }
 
 
   render() {
@@ -47,33 +35,33 @@ class WeekTracker extends React.Component{
         <div className="col-5">
         <label>
           mon.
-        <Checkbox name="monday" checkClicked={this.handleChange}/>
+        <Checkbox data = {this.props.frequency} name="monday" checkClicked={this.handleChange}/>
         </label>
         <label>
           tues.
-        <Checkbox name="tuesday" checkClicked={this.handleChange} />
+        <Checkbox data = {this.props.frequency} name="tuesday" checkClicked={this.handleChange} />
         </label> <label>
           wed.
-        <Checkbox name="wednesday" checkClicked={this.handleChange}/>
+        <Checkbox data = {this.props.frequency} name="wednesday" checkClicked={this.handleChange}/>
         </label> <label>
           thurs.
-        <Checkbox name="thursday" checkClicked={this.handleChange}/>
+        <Checkbox data = {this.props.frequency} name="thursday" checkClicked={this.handleChange}/>
         </label> <label>
           fri.
-        <Checkbox name="friday" checkClicked={this.handleChange} />
+        <Checkbox data = {this.props.frequency} name="friday" checkClicked={this.handleChange} />
         </label> <label>
           sat.
-        <Checkbox name="saturday"checkClicked={this.handleChange}/>
+        <Checkbox data = {this.props.frequency} name="saturday"checkClicked={this.handleChange}/>
         </label> <label>
           sun.
-        <Checkbox name="sunday" checkClicked={this.handleChange}/>
+        <Checkbox data = {this.props.frequency} name="sunday" checkClicked={this.handleChange}/>
         </label>
         </div>
         <div className= 'col-2 justify-content-center'>
-        <h3> {percentage}% </h3>
+        <h3> {this.props.percent}% </h3>
         </div>
         <div className="col-5 justify-content-center">
-        <Percentage percent = {percentage}/>
+        <Percentage percent = {this.props.percent}/>
         </div>
         </div>
       </div>
@@ -84,7 +72,8 @@ class WeekTracker extends React.Component{
 
   const mapStateToProps = state => {
     return{
-      checkboxes: state.checkboxes.check
+      checkboxes: state.checkboxes.check,
+      percent: state.checkboxes.percentage
     }
   }
 
@@ -92,7 +81,8 @@ class WeekTracker extends React.Component{
   const mapDispatchToProps = dispatch =>{
     return{
       addCheck: check => dispatch({type:"ADD_CHECK", payload: check}),
-      deleteCheck: check => dispatch({type:"DELETE_CHECK", payload:check})
+      deleteCheck: check => dispatch({type:"DELETE_CHECK", payload:check}),
+      percentage: data => dispatch({type: "HANDLE_PERCENT", payload: data})
     }
   }
 
