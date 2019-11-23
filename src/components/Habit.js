@@ -1,8 +1,16 @@
 import React from 'react'
-import WeekTracker from './WeekTracker.js'
 import Progress from './Progress'
+
+function HabitDiv(props){
+  return (
+   <div className={'HabitDiv'}>
+     {props.children}
+   </div>
+ );
+}
 const Habit = props => {
   return(
+    <HabitDiv>
   <div className="container-fluid habits">
   <div className="row">
   <div className='col'>
@@ -13,10 +21,11 @@ const Habit = props => {
   </div>
   <div className = "row">
   <div className="col">
-  <WeekTracker frequency={props.frequency}/>
+    {props.children}
   </div>
   </div>
   </div>
+  </HabitDiv>
 
 
 )

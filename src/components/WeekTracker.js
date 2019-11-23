@@ -4,12 +4,10 @@ import Percentage from './Progress'
 import { connect } from 'react-redux'
 
 class WeekTracker extends React.Component{
-  constructor(props){
-    super(props)
-    this.handleChange = this.handleChange.bind(this)
-  }
+  
 
   handleChange = (e) =>{
+    debugger
     if(e.target.checked === true){
       this.props.addCheck(e.target)}
 

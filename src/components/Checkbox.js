@@ -4,18 +4,13 @@ import React from 'react';
 
 export default class Checkbox extends React.Component{
 
-  constructor(props){
-    super(props)
-    this.state= {
-      isChecked: false
-    }
-  }
 
 
 
 
 
   handleCheck=(e)=>{
+    debugger
     this.props.checkClicked(e)}
 
 
@@ -23,7 +18,7 @@ export default class Checkbox extends React.Component{
   render(){
     return(
   <div>
-    <input type="checkbox" frequency-data= {this.props.data} checked={this.state.checked} name={this.props.name} value= {this.state.isChecked} onClick={(e)=>this.handleCheck(e)}/>
+    <input type="checkbox"  name={this.props.name} onClick={(e)=>this.handleCheck(e)}/>
   </div>
 )
 }
